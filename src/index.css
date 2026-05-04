@@ -1563,6 +1563,39 @@ h3 {
   font-size: 0.95rem;
 }
 
+.strategy-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+}
+
+.strat-tab {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.15s;
+}
+.strat-tab:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+.strat-tab.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--accent-on);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(124, 92, 255, 0.3);
+}
 .decalogue-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -1741,7 +1774,7 @@ h3 {
 
 .about-card-grid {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 144px 1fr;
   gap: 24px;
   align-items: start;
 }
@@ -1768,8 +1801,8 @@ h3 {
 
 .author-avatar,
 .club-logo {
-  width: 96px;
-  height: 96px;
+  width: 144px;
+  height: 144px;
   border-radius: 24px;
   background: #ffffff;
   border: 1px solid var(--border);
@@ -1880,7 +1913,7 @@ h3 {
 @media (max-width: 640px) {
   .about-card { padding: 22px 20px 24px; }
   .about-card-grid { grid-template-columns: 1fr; gap: 16px; }
-  .author-avatar, .club-logo { width: 72px; height: 72px; border-radius: 22px; }
+  .author-avatar, .club-logo { width: 108px; height: 108px; border-radius: 22px; }
   .author-avatar { font-size: 1.5rem; }
 }
 

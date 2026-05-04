@@ -38,7 +38,6 @@ export default function Decalogue({ lang }) {
   return (
     <div className="decalogue-shell">
       <header className="decalogue-header">
-        <div className="chip">{t(lang, 'decalogue.eyebrow')}</div>
         <h2 className="decalogue-heading">{t(lang, 'decalogue.title')}</h2>
         <p className="muted decalogue-subtitle">{t(lang, 'decalogue.subtitle')}</p>
       </header>

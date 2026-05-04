@@ -4,7 +4,31 @@ import { t } from '../i18n.js';
 import { getStrategies } from '../services/strategies.js';
 import StrategyArt from './StrategyArt.jsx';
 
+const SHORT_NAMES = {
+  cs: {
+    star: 'STAR',
+    oreo: 'OREO',
+    zoomOut: 'ZoomOut',
+    pcs: 'PCS',
+    ppf: 'PPF',
+    proCon: 'Pro&Proti',
+    pendulum: 'Kyvadlo',
+    devilsAdvocate: 'Ďábel'
+  },
+  en: {
+    star: 'STAR',
+    oreo: 'OREO',
+    zoomOut: 'ZoomOut',
+    pcs: 'PCS',
+    ppf: 'PPF',
+    proCon: 'Pros&Cons',
+    pendulum: 'Pendulum',
+    devilsAdvocate: 'Devil'
+  }
+};
+
 export default function Presentation({ lang, initialStrategyId }) {
+  const shortNames = SHORT_NAMES[lang] || SHORT_NAMES.cs;
   const strategies = getStrategies(lang);
   const initialIndex = (() => {
     if (!initialStrategyId) return 0;
@@ -55,11 +79,28 @@ export default function Presentation({ lang, initialStrategyId }) {
 
   return (
     <div className="slide-shell">
+      <header className="decalogue-header">
+        <h2 className="decalogue-heading">{t(lang, 'presentation.title')}</h2>
+        <p className="muted decalogue-subtitle">{t(lang, 'presentation.subtitle')}</p>
+      </header>
+
+      <nav className="strategy-tabs" aria-label="Strategie">
+        {strategies.map((s, i) => (
+          <button
+            key={s.id}
+            type="button"
+            className={i === index ? 'strat-tab active' : 'strat-tab'}
+            onClick={() => setIndex(i)}
+            aria-current={i === index ? 'true' : undefined}
+            aria-label={s.name}
+          >
+            {shortNames[s.id] || s.name}
+          </button>
+        ))}
+      </nav>
+
       <article className="slide" key={strategy.id}>
         <header className="slide-header">
-          <div className="slide-counter">
-            {index + 1} / {strategies.length}
-          </div>
           <div className="slide-title-row">
             <h1 className="slide-title">{strategy.name}</h1>
             <StrategyArt id={strategy.id} className="slide-art" />
@@ -89,16 +130,9 @@ export default function Presentation({ lang, initialStrategyId }) {
         <button className="slide-arrow" onClick={prev} aria-label="Previous">
           ←
         </button>
-        <div className="slide-dots">
-          {strategies.map((s, i) => (
-            <button
-              key={s.id}
-              className={i === index ? 'dot active' : 'dot'}
-              onClick={() => setIndex(i)}
-              aria-label={s.name}
-            />
-          ))}
-        </div>
+        <span className="decalogue-counter">
+          {index + 1} / {strategies.length}
+        </span>
         <button className="slide-arrow" onClick={next} aria-label="Next">
           →
         </button>

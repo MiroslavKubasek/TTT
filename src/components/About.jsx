@@ -55,7 +55,6 @@ export default function About({ lang }) {
   return (
     <div className="about-shell">
       <header className="about-header">
-        <div className="chip">{t(lang, 'about.eyebrow')}</div>
         <h2 className="about-heading">{t(lang, 'about.title')}</h2>
         <p className="about-lead">{t(lang, 'about.lead')}</p>
       </header>

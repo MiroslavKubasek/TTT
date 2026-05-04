@@ -181,11 +181,14 @@ export default function Generator({ lang, challenge, setChallenge, settings, onS
   );
 
   return (
-    <div className="card generator">
-      <h2>{t(lang, 'generator.heading')}</h2>
-      <p className="muted">{t(lang, 'generator.subheading')}</p>
+    <div className="decalogue-shell">
+      <header className="decalogue-header">
+        <h2 className="decalogue-heading">{t(lang, 'generator.heading')}</h2>
+        <p className="muted decalogue-subtitle">{t(lang, 'generator.subheading')}</p>
+      </header>
 
-      {challenge ? (
+      <div className="card generator">
+        {challenge ? (
         <div className="challenge">
           <div className="chip">{t(lang, 'generator.topicLabel')}</div>
           <div className="topic-row">
@@ -394,6 +397,7 @@ export default function Generator({ lang, challenge, setChallenge, settings, onS
           <code>{aiDrawState.error}</code>
         </div>
       )}
+      </div>
     </div>
   );
 }

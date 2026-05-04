@@ -28,7 +28,7 @@ export const translations = {
     about: {
       eyebrow: 'O aplikaci',
       title: 'O aplikaci a autorovi',
-      lead: 'Tréninkový nástroj pro improvizované projevy ve stylu Toastmasters Table Topics. Vznikl jako podklad pro Improvizační workshop Brněnských Toastmasterů – losuje témata, nabízí strategie projevu, dává krátké AI nakopnutí a po projevu navíc poradí AI mentor.',
+      lead: 'Tento tréninkový nástroj pro improvizované projevy ve stylu Toastmasters Table Topics vznikl jako podklad pro Improvizační workshop Brněnských Toastmasterů – losuje témata, nabízí strategie projevu, dává krátké AI nakopnutí a po projevu navíc poradí AI mentor.',
       authorEyebrow: 'Autor',
       authorText: 'Tvůrce této aplikace. Aplikaci napsal jako otevřený nástroj pro Improvizační workshop Brněnských Toastmasterů – aby si každý mohl vyzkoušet improvizaci se strukturou, která dává růst, a vrátit se k ní, kdykoliv má pár minut nazbyt.',
       clubEyebrow: 'Klub',
@@ -49,6 +49,8 @@ export const translations = {
       next: 'Další bod',
     },
     presentation: {
+      title: 'Strategie pro Table Topics',
+      subtitle: '8 struktur, které ti pomůžou v improvizovaném projevu. Proklikej se po jedné.',
       mainIdea: 'Hlavní myšlenka',
       example: 'Příklad',
       empty: 'Žádné strategie nebyly nalezeny. Přidej .md soubory do složky src/content/strategies/cs/.',
@@ -178,6 +180,8 @@ export const translations = {
       next: 'Next point',
     },
     presentation: {
+      title: 'Strategies for Table Topics',
+      subtitle: '8 structures that will help you with impromptu speaking. Click through them one by one.',
       mainIdea: 'Main idea',
       example: 'Example',
       empty: 'No strategies found. Add .md files to src/content/strategies/en/.',
